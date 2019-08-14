@@ -1,0 +1,39 @@
+<?php
+$model = Mage::getModel('omnipixel/omnipixelsetting');
+$model->load(1); 
+$data = $model->getData(); 
+$enable = $data['is_enable'];
+
+if($enable == '1')
+{
+	
+
+$client_key = $data['client_key'];
+$secret_key = $data['secret_key'];
+
+$iframe_url = 'https://api.polytab.com/v1/api/ChannelPerformance/CPPage/'.$client_key.'/'.$secret_key;
+if($client_key !='' && $secret_key !='')
+{
+
+?>
+<div id="inheritance_grid">
+<iframe src="<?php echo $iframe_url; ?>" width="100%" frameborder="0"></iframe>
+</div>
+  <?php
+ }
+  else
+  {
+  	echo "You need to enbale this extension to view channel performance report.";
+  }
+}
+ else
+ {
+ 	echo "You need to enbale this extension to view channel performance report.";
+ }
+  ?>
+ <style>
+#inheritance_grid iframe
+{
+	height: 450px !important;
+}
+</style>

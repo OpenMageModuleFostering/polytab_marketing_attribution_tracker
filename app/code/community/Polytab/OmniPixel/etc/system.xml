@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <tabs>
+        <polytab translate="label" module="omnipixel">
+            <label>Polytab</label>
+            <sort_order>100</sort_order>
+        </polytab>
+    </tabs>
+
+    <sections>
+        <omnipixel translate="label" module="omnipixel">
+            <label>Settings</label>
+            <tab>polytab</tab>
+            <sort_order>100</sort_order>
+            <show_in_default>1</show_in_default>
+            <groups>
+                <general translate="label" module="omnipixel">
+                    <label>General Configuration</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <expanded>1</expanded>
+                    <fields>
+                        <debug translate="label comment" module="omnipixel">
+                            <label>Enable</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                        </debug>
+                        <terms_conditions  translate="label">
+                            <label>Terms Conditions</label>
+                            <frontend_type>checkbox</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>0</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <depends><debug>1</debug></depends>
+                            <comment>By agreeing to install the Polytab attribution extension, you acknowledge acceptance of the terms and conditions listed <![CDATA[<a href="http://www.infemotions.com/privacy-terms-of-use/" target="_blank">here.</a>]]>
+                    </comment>
+							<ans>
+								
+							</ans> 
+                        </terms_conditions>
+                       <!-- <public_id translate="label">
+                            <label>Container Public ID</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                             <validate>validate-text required-entry</validate>
+                             <depends><debug>1</debug></depends>
+                        </public_id>-->
+                        <platform_code translate="label comment">
+                            <label>Platform Code</label>
+                            <comment>Polytab attribution Client key.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <validate>validate-text required-entry</validate>
+                             <depends><debug>1</debug></depends>
+                        </platform_code>
+                        <get_secret_key translate="label" module="omnipixel">
+                            <label>Get Client and Secret Key</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>omnipixel/adminhtml_system_config_form_button_extort</frontend_model>
+                            <comment>Get Client Key and Secret Key.</comment>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <depends><debug>1</debug></depends>
+                        </get_secret_key>
+                        <client_key translate="label comment">
+                            <label>Client Key</label>
+                            <comment>Polytab attribution Client key.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>5</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                             <depends><debug>1</debug></depends>
+                        </client_key>                       
+                        <secret_key translate="label comment">
+                            <label>Secret Key</label>
+                            <comment>Polytab attribution Secret Key.</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+                            <depends><debug>1</debug></depends>                            
+                        </secret_key> 
+                    </fields>
+                </general>    
+            </groups>
+        </omnipixel>
+    </sections>
+</config>
